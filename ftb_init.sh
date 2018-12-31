@@ -7,8 +7,15 @@ if [ "$FTB_MODPACK_URL" ] ; then
   echo "Downloading pack from $FTB_MODPACK_URL"
   wget -O modpack.zip `echo $FTB_MODPACK_URL | tr -d '"'`
   unzip -q modpack.zip
-  chmod u+x FTBInstall.sh   
-  ./FTBInstall.sh
+
+  if [ -e FTBInstall.sh ] ; then
+    chmod u+x FTBInstall.sh   
+    ./FTBInstall.sh
+  elif [ -e Install.sh ] ; then
+    chmod u+x Install.sh
+    ./Install.sh
+  fi
+
   if [ "$MAX_RAM" ] ; then
     echo "export MAX_RAM=\"$MAX_RAM\"" >> settings_local.sh
   fi
