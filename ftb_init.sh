@@ -18,7 +18,13 @@ if [ "$FTB_MODPACK_URL" ] ; then
 
   if [ "$MAX_RAM" ] ; then
     echo "export MAX_RAM=\"$MAX_RAM\"" >> settings_local.sh
+    if [ -e settings.sh ] ; then
+      mv settings.sh settings.sh.old
+      cat settings.sh.old | grep -v MAX_RAM > settings.sh
+      rm settings.sh.old
+    fi
   fi
+
   if [ "$EULA_ACCEPTED" == "true" ] ; then
     printf "#`date`\neula=$EULA_ACCEPTED" > eula.txt
   else
