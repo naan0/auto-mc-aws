@@ -5,7 +5,7 @@ set -ex
 if [ "$FTB_MODPACK_URL" ] ; then
   cd /ftb
   echo "Downloading pack from $FTB_MODPACK_URL"
-  wget -O modpack.zip `echo $FTB_MODPACK_URL | tr -d '"'`
+  wget -qO modpack.zip `echo $FTB_MODPACK_URL | tr -d '"'`
   unzip -q modpack.zip
 
   if [ -e FTBInstall.sh ] ; then
