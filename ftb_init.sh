@@ -31,6 +31,9 @@ if [ "$FTB_MODPACK_URL" ] ; then
     echo "ERROR: Accept the minecraft EULA by providing the variable EULA_ACCEPTED set to TRUE. By changing this to TRUE you are indicating your agreement to the Minecraft EULA (https://account.mojang.com/documents/minecraft_eula)."
     exit 1
   fi 
+  if [ ! -e ./ServerStart.sh ] && [ -e ./serverstart.bat ] ; then
+    head -n 1 ./serverstart.bat > ./ServerStart.sh
+  fi
   chmod u+x ServerStart.sh
   ln -s /world world
   MANAGED_FILES='server.properties banned-ips.json banned-players.json ops.json server-icon.png whitelist.json'

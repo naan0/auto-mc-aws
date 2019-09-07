@@ -20,3 +20,12 @@ In addition to the world itself, the following files can be managed by auto-mc-a
   whitelist.json
 
 These files should be placed inside the world's directory, in a folder called auto-mc-aws. auto-mc-aws will create symlinks from the server root to this directory in the world folder.
+
+---
+Documenting current state:
+
+CloudFormation manually setup to launch ECS cluster
+Manually created ECS service definition for modpack specific minecraft instanecs
+Manually run ECS service per each modpack
+
+TODO: templatize the CloudFormation and ECS definitions so it all can be run from cmd line
