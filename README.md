@@ -3,8 +3,8 @@ This is a system which can connect to any AWS account (when configured properly)
 
 # Features
 1. (TBD) auto healing - when the spot price spikes, we automatically save the world and bring up a new one in an AZ that is more stable
-2. (TBD) uses spot instances, very cheap
-3. (TBD) configurable - use any instance type, region/az, etc
+2. uses spot instances, very cheap (via manual configuration in fleet)
+3. configurable - use any instance type, region/az, etc (manually)
 4. uses docker and can be pointed at any modpack/world/config to bootstrap
 
 # Getting started
