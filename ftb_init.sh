@@ -33,6 +33,7 @@ if [ "$FTB_MODPACK_URL" ] ; then
   fi 
   if [ ! -e ./ServerStart.sh ] && [ -e ./serverstart.bat ] ; then
     head -n 1 ./serverstart.bat > ./ServerStart.sh
+    sed -i 's/java/java -Dfml.queryResult=confirm/g' ./ServerStart.sh #just in case this dialog pops in
   fi
   chmod u+x ServerStart.sh
   ln -s /world world
